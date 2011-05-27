@@ -1,8 +1,8 @@
-#Q
-##Damn small javascript queue implementation
+#stx
+##Damn small javascript stack implementation
 
 ###Introduction
-Pronounced (/ˈkjuː/), this is yet another implementation of a queue made in Javascript. This is used in the [vivax.js](https://github.com/DarkThrone/vivax) animation library. Is made to be lightweight, fast and economic.
+Pronounced (/stks/), this is yet another implementation of a stack made in Javascript. Is made to be lightweight, fast and economic.
 Implemented with a sentinel, when the collection size is 10% smaller than the whole length of the array, the collection shrinks automatically.
 The source is well commented with some insights. Feel free to fork it and add, take, modify to your souls content.
 

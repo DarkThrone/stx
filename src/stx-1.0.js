@@ -21,57 +21,57 @@
  */
 
 /**
- * A simple and short queue. This helper class aids in the creation and walking of a queue. The implementation is rather
- * generic, mantaining the most common methods, size, peek, enqueue, dequeue and isEmpty.
+ * A simple and short stack. This helper class aids in the creation and walking of a stack. The implementation is rather
+ * generic, mantaining the most common methods, size, peek, push, pop and isEmpty.
  *
  * @author: Geronimo Garcia Sgritta
  * @version: 1.0
  */
 
 /**
- * Creates a simple queue
+ * Creates a simple stack
  *
  * @constructor
  */
-var Q = function(){
-                var q = [], //The actual queue
+var stx = function(){
+                var s = [], //The actual stack
                     l = 0; //The length, size & offset of the queue
                 return {
                     /**
-                     * returns the size of the queue
-                     * @return size The size of the queue
+                     * returns the size of the stack
+                     * @return size The size of the stack
                      */
                     size: function(){
                         return l>0 ? l : 0;
                     },
                     /**
-                     * Returns the element that is in the top of the queue. If the queue is empty returns 'undefined'
-                     * @return o An element that is at the top of the queue
+                     * Returns the element that is in the top of the stack. If the stack is empty returns 'undefined'
+                     * @return o An element that is at the top of the stack
                      */
                     peek: function(){
-                        return q[l-1];
+                        return s[l-1];
                     },
                     /**
-                     * Dequeues and element and returns it. If the queue is empty returns 'undefined'
-                     * @return o An element that is at the top of the queue
+                     * Pops an element and returns it. If the stack is empty returns 'undefined'
+                     * @return o An element that is at the top of the stack
                      */
-                    dequeue: function(){
-                        if(l < q.length*0.9){
+                    pop: function(){
+                        if(l < s.length*0.9){
                              //Remove unnecessary and empty elements
-                            q = q.slice(0,l);
+                            s = s.slice(0,l);
                         }
-                        return q[--l];
+                        return s[--l];
                     },
                     /**
-                     * Enqueues an element
+                     * Push an element to the stack
                      * @param o
                      */
-                    enqueue: function(o){
-                        q[l++] = o;
+                    push: function(o){
+                        s[l++] = o;
                     },
                     /**
-                     * If the queue is empty returns true, otherwise false
-                     * @return True if the queue is empty
+                     * If the stack is empty returns true, otherwise false
+                     * @return True if the stack is empty
                      *         False if there is an element
                      */
                     isEmpty: function(){
@@ -81,13 +81,13 @@ var Q = function(){
                         console.log("===================================");
                         console.log("////Dumping debug information//////");
                         console.log("===================================");
-                        console.log("Length of the array:       "+ q.length);
+                        console.log("Length of the array:       "+ s.length);
                         console.log("Length of the collection:  "+ l);
                         console.log("===================================");
                         console.log("////Collection detailed information");
                         console.log("===================================");
-                        for(var i = 0; i < q.length; i++){
-                            console.log("Index " + i + " contains: " + q[i] + (i < l ? ' TRUE' : ' FALSE'));
+                        for(var i = 0; i < s.length; i++){
+                            console.log("Index " + i + " contains: " + s[i] + (i < l ? ' TRUE' : ' FALSE'));
                         }
                         console.log("===================================");
                         console.log("////End of dump////////////////////");
